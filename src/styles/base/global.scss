@@ -1,0 +1,38 @@
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #03032f;
+}
+.sub-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #03032f;
+}
+.description {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

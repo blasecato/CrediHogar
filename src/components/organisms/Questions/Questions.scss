@@ -1,0 +1,38 @@
+.Questions {
+  background-color: #eeeeee;
+  padding-bottom: 30px;
+  .container {
+    padding: 20px;
+  }
+  .title {
+    text-align: center;
+    margin: 20px 0;
+    margin-bottom: 40px;
+  }
+  .ant-collapse {
+    background-color: transparent;
+    border: none;
+    .ant-collapse-item {
+      border-radius: 10px;
+      margin-bottom: 15px;
+      // box-shadow: 0 0 10px #0000001a;
+      border: 1px solid #e0e0e0;
+      overflow: hidden;
+      .ant-collapse-header {
+        font-size: 18px;
+        font-weight: 600;
+        background-color: transparent;
+        .anticon {
+          color: $secondary-color;
+        }
+      }
+      .ant-collapse-content {
+        .ant-collapse-content-box {
+          font-size: 16px;
+          line-height: 1.5;
+          background-color: #ffffff;
+        }
+      }
+    }
+  }
+}

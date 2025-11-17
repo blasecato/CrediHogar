@@ -1,0 +1,32 @@
+.button {
+  &-primary {
+    background-color: #ca2e0d !important;
+    border-color: #ca2e0d !important;
+    color: #ffffff !important;
+    height: 50px;
+    min-width: 150px;
+    font-size: 18px;
+    span {
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      box-shadow: 0 0 15px #0000004f;
+
+      span {
+        scale: 1.09;
+      }
+    }
+  }
+  &-secondary {
+  }
+  &-tertiary {
+  }
+  &-transparent {
+    height: auto;
+    width: auto;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+  }
+}
