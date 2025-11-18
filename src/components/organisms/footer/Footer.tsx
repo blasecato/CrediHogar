@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
               <Link to='/' className="item">Inicio</Link>
             </li>
             <li>
-              <Link to='/' className="item">Tienda</Link>
+              <Link target='_blank' to="https://store.converxia.com/shop/credihogar" className="item">Tienda</Link>
             </li>
             <li>
               <Link to='/' className="item">Ver catalogo</Link>

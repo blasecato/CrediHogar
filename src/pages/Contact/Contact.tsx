@@ -125,7 +125,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31905.816083521677!2d-75.622254!3d1.6182771!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e244f556ce54775%3A0x33817a90b8d243e8!2sCREDIHOGAR!5e0!3m2!1ses-419!2sco!4v1763492668997!5m2!1ses-419!2sco" width="100%" height="450" style={{ border: "0" }} loading="lazy"></iframe>      </div>
     </Layout>
   );
 };

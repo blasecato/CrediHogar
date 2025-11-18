@@ -1,10 +1,19 @@
 import { EnvironmentOutlined, PhoneOutlined, UserOutlined, WhatsAppOutlined } from "@ant-design/icons";
-import { Button } from "antd";
 import img1 from '@/assets/questions/img1.png';
 import img2 from '@/assets/questions/img2.png';
-import { motion } from 'framer-motion'; // 1. Importar Motion
+import img3 from '@/assets/questions/img3.jpg';
+import img4 from '@/assets/questions/img4.jpg';
+import img5 from '@/assets/questions/img5.jpg';
+import img6 from '@/assets/questions/img6.jpg';
+import img7 from '@/assets/questions/img7.jpg';
+import img8 from '@/assets/questions/img8.jpg';
+import img9 from '@/assets/questions/img9.jpg';
+import img10 from '@/assets/questions/img10.jpg';
+import { motion } from 'framer-motion';
 
-// 2. Definir las variantes (usando 'as const' para TypeScript)
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -22,19 +31,28 @@ const itemVariants = {
 
 const Branches = () => {
   const directions = [
-    { id: 1, title: 'Florencia', direction: 'Calle 5 # 3-45', phone: '314 567 8901', name: 'Juan Perez' },
-    { id: 2, title: 'Florencia', direction: 'Calle 5 # 3-45', phone: '314 567 8901', name: 'Juan Perez' },
-    { id: 3, title: 'Florencia', direction: 'Calle 5 # 3-45', phone: '314 567 8901', name: 'Juan Perez' },
-    { id: 4, title: 'Florencia', direction: 'Calle 5 # 3-45', phone: '314 567 8901', name: 'Juan Perez' },
-    { id: 5, title: 'Florencia', direction: 'Calle 5 # 3-45', phone: '314 567 8901', name: 'Juan Perez' },
-    { id: 6, title: 'Florencia', direction: 'Calle 5 # 3-45', phone: '314 567 8901', name: 'Juan Perez' },
+    { id: 1, title: 'Florencia', direction: 'B/ LA CASTILLA Despues de la Y de nueva Colombia, calle 11 #3-18', phone: '3125878778', name: 'LUZ ADRIANA TAPIERO' },
+    { id: 2, title: 'Macarena', direction: 'Calle 6 No 6-22 Barrio el Centro', phone: '3144928207', name: 'PAOLA GIRONZA' },
+    { id: 3, title: 'Pto Rico', direction: 'Calle 6 No 9-46 Barrio las Damas', phone: '3118970661', name: 'SANDRA ILIZALDE' },
+    { id: 4, title: 'Cartagena del Chaira', direction: 'Carrera 10 No 3-60 Barrio Antioquia', phone: '3133638260', name: 'ADRIANA TRASLAVIÑA' },
+    { id: 5, title: 'San Vicente', direction: 'Carrera 5 6 07 N° 5A-104 Barrio Santa Isabel', phone: '3105463794', name: 'NURY VILLAQUIRAN' },
+    { id: 6, title: 'Pto Asis', direction: 'Carrera 27 N 21-10 Barrio el prado', phone: '3227139270', name: '' },
+  ];
+  const caroucel = [
+    { id: 1, img: img1 },
+    { id: 2, img: img2 },
+    { id: 3, img: img3 },
+    { id: 4, img: img4 },
+    { id: 5, img: img5 },
+    { id: 6, img: img6 },
+    { id: 7, img: img7 },
+    { id: 8, img: img8 },
+    { id: 9, img: img9 },
+    { id: 10, img: img10 },
   ];
 
   return (
-    // Sin animación en el 'div' raíz
     <div className="Branches">
-
-      {/* 3. Primer bloque de animación (Sucursales) */}
       <motion.div
         className="container"
         variants={containerVariants}
@@ -45,11 +63,8 @@ const Branches = () => {
         <motion.h2 className="title" variants={itemVariants}>
           NUESTRAS SUCURSALES
         </motion.h2>
-
-        {/* 4. Contenedor para las tarjetas (para el 'stagger') */}
         <motion.div className="cards" variants={containerVariants}>
           {directions.map((item) => (
-            // 5. Cada tarjeta es un 'item' animado
             <motion.div key={item.id} className="card" variants={itemVariants}>
               <h3 className="card-title">{item.title}</h3>
               <div className="list">
@@ -73,12 +88,14 @@ const Branches = () => {
                 </div>
               </div>
               <div className="flex-center">
-                <Button className="button-primary"><WhatsAppOutlined />Contactar</Button>
+                <a
+                  href={`https://wa.me/57${item.phone}?text=Hola%20quiero%20hablar%20con%20un%20asesor%21`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button-primary small"><WhatsAppOutlined />Contactar</a>
               </div>
             </motion.div>
           ))}
-
-          {/* 6. El botón suelto también se anima como un 'item' */}
           <motion.div variants={itemVariants}>
             <a
               href="https://wa.me/573125425175?text=Hola%20quiero%20hablar%20con%20un%20asesor%21"
@@ -90,11 +107,8 @@ const Branches = () => {
               Quiero hablar con un asesor
             </a>
           </motion.div>
-
         </motion.div>
       </motion.div>
-
-      {/* 7. Segundo bloque de animación (24 años...) */}
       <motion.div
         className="container container-two"
         variants={containerVariants}
@@ -103,18 +117,54 @@ const Branches = () => {
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.h2 className="sub-title" variants={itemVariants}>
-          24 años llevando felicidad
-          a hogares caqueteños
+          22 AÑOS LLEVANDO FELICIDAD <br /> A HOGARES CAQUETEÑOS
         </motion.h2>
-
-        {/* 8. Contenedor para las imágenes (para el 'stagger') */}
-        <motion.div className="flex-around" variants={containerVariants}>
-          <motion.div className="col" variants={itemVariants}>
-            <img src={img1} alt="process" className='process' />
-          </motion.div>
-          <motion.div className="col" variants={itemVariants}>
-            <img src={img2} alt="process" className='process' />
-          </motion.div>
+        <motion.div className="swiper-container-wrapper" variants={itemVariants}>
+          <Swiper
+            modules={[Pagination, Navigation, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={2}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            pagination={{ clickable: true }}
+            navigation={true}
+            breakpoints={{
+              500: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              300: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              400: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+            }}
+            className="mySwiper"
+          >
+            {caroucel.map((item) => (
+              <SwiperSlide key={item.id}>
+                <img src={item.img} alt={`Carrousel image ${item.id}`} className='process' />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </motion.div>
       </motion.div>
     </div>

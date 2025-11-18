@@ -6,7 +6,10 @@ import bannerImg2 from '@/assets/1Portada Pg W2.webp';
 import bannerImg3 from '@/assets/1Portada Pg W3.webp';
 
 const Banner: React.FC = () => {
-  const bannerImages = [bannerImg1, bannerImg2, bannerImg3];
+  const bannerImages = [
+    { id: 1, src: bannerImg1, title: '¡RECIBE TUS MUEBLES LISTOS PARA USAR!', text: 'Sin herramientas, sin estrés, sin demoras.' },
+    { id: 2, src: bannerImg2, title: 'CRÉDITO FÁCIL, SIN TANTO TRÁMITE', text: '¡Solo elige, disfruta y estrena hoy!' },
+    { id: 3, src: bannerImg3, title: 'TU HOGAR TAMBIÉN MERECE UN NUEVO COMIENZO', text: 'Este diciembre, hazlo posible con nuestros muebles' }];
 
   return (
     <div className="Banner">
@@ -21,8 +24,11 @@ const Banner: React.FC = () => {
         className="banner-swiper"
       >
         {bannerImages.map((image, index) => (
-          <SwiperSlide key={index} className={`banner-slide banner-slide-${index + 1}`}>
-            <img src={image} alt={`Banner ${index + 1}`} className="banner-image" />
+          <SwiperSlide key={index} className='banner-slide'>
+            <div className={`back banner-slide-${index + 1}`} style={{ backgroundImage: `url(${image.src})` }}>
+              <h1 className='super-title'>{image.title}</h1>
+              <p className='super-text'>{image.text}</p>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

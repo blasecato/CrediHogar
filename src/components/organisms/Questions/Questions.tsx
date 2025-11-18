@@ -51,7 +51,7 @@ const Questions = () => {
 
         {/* 4. El título es un 'item' */}
         <motion.h2 className="title" variants={itemVariants}>
-          Preguntas Frecuentes
+          PREGUNTAS FRECUENTES
         </motion.h2>
 
         {/* 5. Envolvemos el componente 'Collapse' en un 'motion.div' 

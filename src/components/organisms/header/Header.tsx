@@ -25,7 +25,7 @@ const Header: React.FC = () => {
             <ul>
               <img src={logoImage} alt="Logo" className='logo' />
               <li><Link to="/">INICIO</Link></li>
-              <li><Link to="#">TIENDA</Link></li>
+              <li><Link target='_blank' to="https://store.converxia.com/shop/credihogar">TIENDA</Link></li>
               <li><Link to="#">VER CATALOGO</Link></li>
               <li><Link to="/about">NOSOTROS</Link></li>
               <li><Link to="/contact">CONTACTO</Link></li>
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
         <nav className="header-nav">
           <ul>
             <li><Link to="/">INICIO</Link></li>
-            <li><Link to="#">TIENDA</Link></li>
+            <li><Link target='_blank' to="https://store.converxia.com/shop/credihogar">TIENDA</Link></li>
             <li><Link to="#">VER CATALOGO</Link></li>
             <li><Link to="/about">NOSOTROS</Link></li>
             <li><Link to="/contact">CONTACTO</Link></li>
