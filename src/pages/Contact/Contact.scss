@@ -1,0 +1,180 @@
+.Contact {
+  a {
+    text-decoration: none !important;
+  }
+  &-banner {
+    padding: 20px;
+    background-image: url("../../assets/banner-contact.png");
+    min-height: 600px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative; // Para el overlay
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(
+        69,
+        78,
+        143,
+        0.7
+      ); // Overlay azul oscuro semitransparente
+    }
+
+    .container {
+      position: relative; // Para que el contenido esté por encima del overlay
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      .title-lite {
+        color: #fff;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .description {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 400;
+        max-width: 500px;
+      }
+    }
+  }
+
+  .form-section {
+    padding: 40px 0;
+    .form-content {
+      display: flex;
+      gap: 40px;
+      justify-content: space-between;
+      max-width: 1000px; // Ajusta según sea necesario
+      margin: 0 auto;
+
+      .col {
+        flex: 1;
+        padding: 20px;
+        background-color: #f8f8f8; // Un fondo ligero para las columnas
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        h3 {
+          font-size: 22px;
+          font-weight: 700;
+          color: #333;
+          margin-bottom: 25px;
+          border-bottom: 2px solid #e0e0e0;
+          padding-bottom: 10px;
+        }
+
+        &.contact-info {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          background-color: #fff; // Fondo blanco para la columna de información
+          .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            h4 {
+              font-size: 18px;
+              font-weight: 600;
+              color: #555;
+              margin-bottom: 5px;
+            }
+            p {
+              font-size: 16px;
+              color: #777;
+              margin: 0;
+            }
+          }
+          .social-media-title {
+            margin-top: 30px;
+            margin-bottom: 15px;
+          }
+          .social-icons {
+            display: flex;
+            gap: 20px;
+            a {
+              // Si decides envolver los iconos en enlaces
+              color: #1890ff;
+              &:hover {
+                color: darken(#1890ff, 10%);
+              }
+            }
+          }
+        }
+
+        &.contact-form-col {
+          background-color: #fff; // Fondo blanco para la columna del formulario
+          .contact-form {
+            .ant-input-group-wrapper {
+              margin-bottom: 15px;
+            }
+            .ant-input,
+            .ant-input-textarea {
+              border-radius: 4px;
+              padding: 10px 15px;
+              border: 1px solid #d9d9d9;
+              &:focus {
+                border-color: #1890ff;
+                box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+              }
+            }
+            .ant-form-item {
+              margin-bottom: 20px; // Espacio entre cada campo del formulario
+              label {
+                display: none; // Oculta las etiquetas si el placeholder es suficiente
+              }
+            }
+            .send-message-button {
+              width: 100%;
+              height: 45px;
+              background-color: #1890ff; // Color principal de Ant Design
+              border-color: #1890ff;
+              font-size: 18px;
+              font-weight: 600;
+              border-radius: 4px;
+              &:hover {
+                background-color: darken(#1890ff, 5%);
+                border-color: darken(#1890ff, 5%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media queries para responsividad
+@media (max-width: 768px) {
+  .Contact .form-section .form-content {
+    flex-direction: column;
+  }
+  .Contact {
+    .container {
+      .description {
+        max-width: 80%;
+      }
+    }
+    .form-section {
+      padding: 0;
+    }
+    &-banner {
+      min-height: 400px;
+      padding: 10px;
+    }
+  }
+}

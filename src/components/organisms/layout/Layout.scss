@@ -7,6 +7,9 @@
     display: flex;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     .container {
       display: flex;
       justify-content: space-between;
@@ -45,6 +48,68 @@
         font-size: medium;
         font-weight: 600;
         text-decoration: none;
+      }
+    }
+    .button-menu {
+      display: none;
+    }
+  }
+  @media (max-width: 800px) {
+    .Header {
+      height: 100px;
+      padding: 10px;
+      .button-menu {
+        display: block;
+        color: white !important;
+        .anticon {
+          font-size: 30px;
+        }
+      }
+      .menu {
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: $primary-color;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .button-menu {
+          position: absolute;
+          right: 10px;
+          top: 35px;
+        }
+        ul {
+          li {
+            margin-bottom: 20px;
+            a {
+              color: white;
+              text-decoration: none;
+            }
+          }
+          .logo {
+            width: 150px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+      .divider {
+        display: none;
+      }
+      .header-logo {
+        .logo {
+          width: 150px;
+        }
+      }
+      .header-nav {
+        display: none;
+        ul {
+          flex-direction: column;
+          gap: 10px;
+        }
       }
     }
   }

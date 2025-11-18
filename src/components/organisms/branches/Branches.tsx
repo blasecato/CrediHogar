@@ -1,6 +1,7 @@
-import { EnvironmentOutlined, PhoneOutlined, UserOutlined } from "@ant-design/icons";
+import { EnvironmentOutlined, PhoneOutlined, UserOutlined, WhatsAppOutlined } from "@ant-design/icons";
 import { Button } from "antd";
-import process from '@/assets/procees.png';
+import img1 from '@/assets/questions/img1.png';
+import img2 from '@/assets/questions/img2.png';
 import { motion } from 'framer-motion'; // 1. Importar Motion
 
 // 2. Definir las variantes (usando 'as const' para TypeScript)
@@ -72,14 +73,22 @@ const Branches = () => {
                 </div>
               </div>
               <div className="flex-center">
-                <Button className="button-primary">Contactar</Button>
+                <Button className="button-primary"><WhatsAppOutlined />Contactar</Button>
               </div>
             </motion.div>
           ))}
 
           {/* 6. El botón suelto también se anima como un 'item' */}
           <motion.div variants={itemVariants}>
-            <Button className="button-primary">Contactar</Button>
+            <a
+              href="https://wa.me/573125425175?text=Hola%20quiero%20hablar%20con%20un%20asesor%21"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button-primary"
+            >
+              <WhatsAppOutlined />
+              Quiero hablar con un asesor
+            </a>
           </motion.div>
 
         </motion.div>
@@ -101,10 +110,10 @@ const Branches = () => {
         {/* 8. Contenedor para las imágenes (para el 'stagger') */}
         <motion.div className="flex-around" variants={containerVariants}>
           <motion.div className="col" variants={itemVariants}>
-            <img src={process} alt="process" className='process' />
+            <img src={img1} alt="process" className='process' />
           </motion.div>
           <motion.div className="col" variants={itemVariants}>
-            <img src={process} alt="process" className='process' />
+            <img src={img2} alt="process" className='process' />
           </motion.div>
         </motion.div>
       </motion.div>

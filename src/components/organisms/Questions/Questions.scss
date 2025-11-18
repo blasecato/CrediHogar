@@ -12,6 +12,8 @@
   .ant-collapse {
     background-color: transparent;
     border: none;
+    max-width: 600px;
+    margin: 0 auto;
     .ant-collapse-item {
       border-radius: 10px;
       margin-bottom: 15px;

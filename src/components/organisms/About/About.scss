@@ -64,4 +64,27 @@
       }
     }
   }
+  @media (max-width: 800px) {
+    .container {
+      .flex {
+        flex-direction: column;
+        gap: 30px;
+      }
+      .column {
+        width: 100%;
+        .process {
+          width: 100%;
+        }
+      }
+      .why {
+        .flex-reason {
+          flex-direction: column;
+          align-items: center;
+        }
+        .reason {
+          width: 80%;
+        }
+      }
+    }
+  }
 }

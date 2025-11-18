@@ -16,6 +16,11 @@ import logo9 from '@/assets/footer-caroucel/item-9.png';
 import logo10 from '@/assets/footer-caroucel/item-10.png';
 import logo11 from '@/assets/footer-caroucel/item-11.png';
 import logo12 from '@/assets/footer-caroucel/item-12.png';
+import credi from '@/assets/LOGOS/Logo R.png';
+import techo from '@/assets/LOGOS/Techo G.png';
+import elite from '@/assets/elite-dark.png';
+import { Link } from 'react-router-dom';
+import { FacebookOutlined, InstagramOutlined, TikTokOutlined } from '@ant-design/icons';
 
 const Footer: React.FC = () => {
   const logos = [
@@ -36,6 +41,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="Footer">
       <div className="container">
+        <h2 className="title">
+          NUESTRAS MARCAS ALIADAS
+        </h2>
         <Swiper
           modules={[Autoplay, Navigation]}
           navigation
@@ -47,9 +55,9 @@ const Footer: React.FC = () => {
           className="footer-swiper"
           breakpoints={{
             // Responsive: adjust slidesPerView on smaller screens
-            320: { slidesPerView: 2, spaceBetween: 10 },
-            480: { slidesPerView: 3, spaceBetween: 12 },
-            768: { slidesPerView: 4, spaceBetween: 16 },
+            320: { slidesPerView: 1, spaceBetween: 10 },
+            480: { slidesPerView: 1, spaceBetween: 12 },
+            768: { slidesPerView: 1, spaceBetween: 16 },
             1024: { slidesPerView: 6, spaceBetween: 20 },
           }}
         >
@@ -62,6 +70,75 @@ const Footer: React.FC = () => {
           ))}
         </Swiper>
       </div>
+      <div className="container container-two">
+        <div className="column">
+          <ul>
+            <li>
+              <img src={credi} alt="Credihogar logo" className='credi' />
+            </li>
+            <li>
+              <p className="item">2025 Credihogar</p>
+            </li>
+            <li>
+              <p className="item">Diseñado por</p>
+            </li>
+            <li>
+              <img src={elite} alt="elite logo" className='credi' />
+            </li>
+          </ul>
+        </div>
+        <div className="column">
+          <ul>
+            <li>
+              <Link to='/' className="item">Inicio</Link>
+            </li>
+            <li>
+              <Link to='/' className="item">Tienda</Link>
+            </li>
+            <li>
+              <Link to='/' className="item">Ver catalogo</Link>
+            </li>
+            <li>
+              <Link to='/about' className="item">Nosotros</Link>
+            </li>
+            <li>
+              <Link to='/contact' className="item">Contacto</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="column">
+          <ul>
+            <li>
+              <p className="item">Politicas de Privacidad</p>
+            </li>
+            <li>
+              <p className="item">Termino y condiciones</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className='container container-two'>
+        <div className="column">
+          <Link target="_blank" to="https://www.facebook.com/CrediHogarCOL">
+            <FacebookOutlined />
+            CrediHogarCOL
+          </Link>
+        </div>
+        <div className="column">
+          <Link target="_blank" to="https://www.instagram.com/supercredihogar/?next=%2F">
+            <InstagramOutlined />
+            supercredihogar
+          </Link>
+        </div>
+        <div className="column">
+          <Link target="_blank" to="https://www.tiktok.com/@super_credihogar">
+            <TikTokOutlined />
+            super-crediHogar
+          </Link>
+        </div>
+
+      </div>
+      <img src={techo} alt="techo logo" className='techo' />
     </footer>
   );
 };

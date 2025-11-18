@@ -13,7 +13,7 @@
       box-shadow: 0 0 15px #0000004f;
 
       span {
-        scale: 1.09;
+        scale: 1.04;
       }
     }
   }
@@ -29,4 +29,14 @@
     background-color: transparent !important;
     border-color: transparent !important;
   }
+}
+a.button.button-primary {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  border-radius: 10px;
+  gap: 10px;
+  text-decoration: none;
 }

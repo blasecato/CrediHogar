@@ -2,8 +2,8 @@ import process from '@/assets/procees.png';
 import surePng from '@/assets/sure.png';
 import moneyPng from '@/assets/money.png';
 import carPng from '@/assets/car.png';
-import { Button } from 'antd';
 import { motion } from 'framer-motion';
+import { WhatsAppOutlined } from '@ant-design/icons';
 
 const About = () => {
   const bannerImages = [
@@ -90,7 +90,15 @@ const About = () => {
           </motion.div>
 
           <motion.div className="flex-center" variants={itemVariants}>
-            <Button className="button button-primary">Contactar</Button>
+            <a
+              className="button button-primary"
+              href="https://wa.me/573125425175?text=Hola%20quiero%20hablar%20con%20un%20asesor%21"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <WhatsAppOutlined />
+              Escríbenos por WhatsApp
+            </a>
           </motion.div>
         </motion.div>
       </div>

@@ -1,0 +1,180 @@
+/* --- Contenedor Principal --- */
+.About {
+  width: 100%;
+  max-width: 1200px; // Limita el ancho del contenido
+  margin: 0 auto; // Centra el contenido
+  padding: 4rem 2rem; // Espaciado interno (arriba/abajo, lados)
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; // Espacio entre la sección "Acerca de" y "Valores"
+  .title {
+    text-align: center;
+  }
+  @media (max-width: 800px) {
+    .logo {
+      width: 300px;
+    }
+    .About__valuesGrid {
+      flex-direction: column;
+      align-items: center;
+      .About__valueCard {
+        width: 90%;
+        .About__cardIcon {
+          .image {
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+    }
+    .About__sisti {
+      .flex-between {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        &-1 {
+          flex-direction: column-reverse;
+        }
+        .text {
+          width: 100%;
+          text-align: left;
+          font-size: 16px;
+        }
+        .ocho {
+          width: 100px;
+        }
+      }
+      .sisti {
+        width: 80%;
+      }
+    }
+  }
+}
+
+/* --- Sección Superior "Acerca de" --- */
+.About__header {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; // Espacio entre el título y el párrafo
+  img {
+    transform: rotate(-5deg);
+    margin-top: -30px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50; // Un color oscuro y moderno
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 500px; // Evita que el párrafo sea demasiado ancho
+    line-height: 1.6;
+  }
+}
+
+/* --- Sección de Valores --- */
+.About__values {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; // Espacio entre el título y la cuadrícula
+}
+
+/* --- Cuadrícula de Valores (La parte "random" y responsiva) --- */
+.About__valuesGrid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* --- Tarjeta de Valor Individual --- */
+.About__valueCard {
+  background-color: #ffffff;
+  border-radius: 12px; // Bordes redondeados
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); // Sombra sutil y moderna
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 32%;
+  height: 340px;
+
+  &:hover {
+    transform: translateY(-5px); // Efecto de levantar al pasar el mouse
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  h3 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #03032f;
+    margin: 0;
+  }
+  p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.4;
+  }
+}
+
+/* --- Icono dentro de la tarjeta --- */
+.About__cardIcon {
+  font-size: 3rem; // Tamaño grande para el icono
+  color: #0056b3; // Un color azul principal (ajústalo al de tu marca)
+  margin-bottom: 0.5rem;
+  .image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+}
+.About__sisti {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  .flex-between {
+    width: 100%;
+    .ocho {
+      width: 300px;
+      max-width: 600px;
+    }
+    .text {
+      width: 70%;
+      font-size: 22px;
+      color: #666;
+      line-height: 1.4;
+    }
+  }
+}
+/* --- Ajustes para pantallas pequeñas (móviles) --- */
+@media (max-width: 600px) {
+  .About {
+    padding: 2rem 1rem; // Menos padding en móviles
+    gap: 3rem;
+  }
+
+  .About__header h1 {
+    font-size: 2rem;
+  }
+
+  .About__values h2 {
+    font-size: 1.5rem;
+  }
+
+  // En móviles, forzamos 1 sola columna
+  .About__valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}
