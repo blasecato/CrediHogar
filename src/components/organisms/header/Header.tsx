@@ -1,11 +1,28 @@
 import { useState } from 'react';
 import logoImage from '@/assets/LOGOS/logo.png';
 import { Link } from 'react-router-dom';
-import { Button } from 'antd';
+import { Button, Dropdown, Menu } from 'antd'; // Importar Dropdown y Menu de Ant Design
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
+  // Define los items para el menú desplegable
+  const catalogMenuItems = (
+    <Menu>
+      <Menu.Item key="1">
+        <a className='description' href="/catalogos/catalogo-muebles.pdf" target="_blank" rel="noopener noreferrer">
+          Catálogo de Muebles
+        </a>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <a className='description' href="/catalogos/catalogo-electrodomesticos.pdf" target="_blank" rel="noopener noreferrer">
+          Catálogo de Electrodomésticos
+        </a>
+      </Menu.Item>
+    </Menu>
+  );
+
   return (
     <header className="Header">
       <div className='container'>
@@ -26,7 +43,12 @@ const Header: React.FC = () => {
               <img src={logoImage} alt="Logo" className='logo' />
               <li><Link to="/">INICIO</Link></li>
               <li><Link target='_blank' to="https://store.converxia.com/shop/credihogar">TIENDA</Link></li>
-              <li><Link to="#">VER CATALOGO</Link></li>
+              {/* Aquí insertamos el Dropdown para el menú móvil */}
+              <li className="catalog-menu-item-mobile">
+                <Dropdown overlay={catalogMenuItems} placement="bottomLeft" arrow>
+                  <a style={{ cursor: 'pointer' }} onClick={e => e.preventDefault()}>VER CATÁLOGO</a>
+                </Dropdown>
+              </li>
               <li><Link to="/about">NOSOTROS</Link></li>
               <li><Link to="/contact">CONTACTO</Link></li>
             </ul>
@@ -36,14 +58,19 @@ const Header: React.FC = () => {
           <ul>
             <li><Link to="/">INICIO</Link></li>
             <li><Link target='_blank' to="https://store.converxia.com/shop/credihogar">TIENDA</Link></li>
-            <li><Link to="#">VER CATALOGO</Link></li>
+            {/* Aquí insertamos el Dropdown para la navegación principal */}
+            <li className="catalog-menu-item">
+              <Dropdown overlay={catalogMenuItems} placement="bottomCenter" arrow>
+                <a style={{ cursor: 'pointer' }} onClick={e => e.preventDefault()}>VER CATÁLOGO</a>
+              </Dropdown>
+            </li>
             <li><Link to="/about">NOSOTROS</Link></li>
             <li><Link to="/contact">CONTACTO</Link></li>
           </ul>
           <div className='divider' />
         </nav>
       </div>
-    </header>
+    </header >
   );
 };
 
