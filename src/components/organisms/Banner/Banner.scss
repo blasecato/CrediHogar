@@ -1,6 +1,7 @@
 .Banner {
   width: 100%;
   height: 600px;
+  position: relative;
 
   .banner-swiper {
     width: 100%;
@@ -66,9 +67,6 @@
         padding-right: 60px;
         font-size: 34px;
         color: $secondary-color;
-      }
-      .flex-button {
-        bottom: 80px;
       }
     }
     @media (min-width: 1400px) {
@@ -138,7 +136,7 @@
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
   }
 
   .swiper-wrapper {

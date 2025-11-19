@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import logoImage from '@/assets/LOGOS/logo.png';
+import logoImage from '@/assets/LOGOS/Logo rr.png';
 import { Link } from 'react-router-dom';
 import { Button, Dropdown, Menu } from 'antd'; // Importar Dropdown y Menu de Ant Design
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons';

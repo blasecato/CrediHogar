@@ -69,8 +69,11 @@ a.button.button-gray {
   justify-content: center;
   align-items: center;
   width: 100%;
+
   position: absolute;
-  bottom: 200px;
+  z-index: 200;
+  height: 60px;
+  bottom: 150px;
 }
 
 @media (max-width: 800px) {
@@ -83,7 +86,7 @@ a.button.button-gray {
     font-size: 15px !important;
   }
   .flex-button {
-    bottom: 100px;
+    bottom: 50px;
     gap: 20px;
   }
 }
