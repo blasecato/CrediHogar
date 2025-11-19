@@ -3,6 +3,9 @@ import logoImage from '@/assets/LOGOS/logo.png';
 import { Link } from 'react-router-dom';
 import { Button, Dropdown, Menu } from 'antd'; // Importar Dropdown y Menu de Ant Design
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
+// Importar el PDF como un objeto/variable
+import pdfMuebles from '@/assets/catalogos/catalogo-muebles.pdf';
+import pdfElectro from '@/assets/catalogos/catalogo-electrodomesticos.pdf';
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -11,12 +14,12 @@ const Header: React.FC = () => {
   const catalogMenuItems = (
     <Menu>
       <Menu.Item key="1">
-        <a className='description' href="/catalogos/catalogo-muebles.pdf" target="_blank" rel="noopener noreferrer">
+        <a className='description' href={pdfMuebles} target="_blank" rel="noopener noreferrer">
           Catálogo de Muebles
         </a>
       </Menu.Item>
       <Menu.Item key="2">
-        <a className='description' href="/catalogos/catalogo-electrodomesticos.pdf" target="_blank" rel="noopener noreferrer">
+        <a className='description' href={pdfElectro} target="_blank" rel="noopener noreferrer">
           Catálogo de Electrodomésticos
         </a>
       </Menu.Item>
