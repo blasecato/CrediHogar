@@ -44,3 +44,46 @@ a.button.button-primary.small {
   padding: 17px;
   height: 30px;
 }
+
+a.button.button-gray {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 10px;
+  gap: 10px;
+  text-decoration: none;
+  background-color: #4a4a4a !important;
+  border-color: #4a4a4a !important;
+  color: #ffffff !important;
+  font-size: 28px;
+}
+.button-banner {
+  padding: 30px !important;
+  font-size: 28px !important;
+}
+.flex-button {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 200px;
+}
+
+@media (max-width: 800px) {
+  a.button.button-gray {
+    padding: 20px !important;
+    font-size: 17px !important;
+  }
+  .button-banner {
+    padding: 20px !important;
+    font-size: 15px !important;
+  }
+  .flex-button {
+    bottom: 100px;
+    gap: 20px;
+  }
+}
