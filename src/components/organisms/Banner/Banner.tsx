@@ -10,7 +10,6 @@ const Banner: React.FC = () => {
     { id: 1, src: bannerImg1, title: '¡RECIBE TUS MUEBLES LISTOS PARA USAR!', text: 'Sin herramientas, sin estrés, sin demoras.' },
     { id: 2, src: bannerImg2, title: 'CRÉDITO FÁCIL, SIN TANTO TRÁMITE', text: '¡Solo elige, disfruta y estrena hoy!' },
     { id: 3, src: bannerImg3, title: 'TU HOGAR TAMBIÉN MERECE UN NUEVO COMIENZO', text: 'Este diciembre, hazlo posible con nuestros muebles' }];
-
   return (
     <div className="Banner">
       <Swiper
