@@ -43,12 +43,47 @@
         margin: 0;
         padding: 0;
       }
+      // ... dentro de .header-nav ...
       a {
         color: white;
         font-size: medium;
         font-weight: 600;
         text-decoration: none;
+
+        /* --- INICIO DE LA ANIMACIÓN --- */
+        position: relative; // Necesario para ubicar la línea
+        padding-bottom: 6px; // Damos espacio para que la línea no toque el texto
+        transition: color 0.3s ease; // Suaviza si decides cambiar el color del texto
+
+        // El pseudo-elemento que actúa como la línea animada
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0; // Empieza invisible (ancho 0)
+          height: 2px; // Grosor de la línea
+          bottom: 0; // Pegado abajo
+          left: 50%; // Empieza desde el centro
+          background-color: #ffffff; // Color de la línea (Blanco)
+          // Si quieres que destaque más, usa un color de acento:
+          // background-color: #ffd700; (Dorado) o el morado claro de tu divider
+
+          transform: translateX(
+            -50%
+          ); // Mantiene la línea centrada matemáticamente
+          transition: width 0.3s ease-in-out; // La velocidad de la animación
+        }
+
+        &:hover {
+          // Opcional: Un ligero brillo o cambio de color en el texto
+          // color: #e6e6e6;
+
+          &::after {
+            width: 100%; // Al hacer hover, la línea crece al 100%
+          }
+        }
+        /* --- FIN DE LA ANIMACIÓN --- */
       }
+      // ...
     }
     .button-menu {
       display: none;

@@ -43,6 +43,9 @@
         font-size: 34px;
         color: $primary-color;
       }
+      .flex-button {
+        bottom: 80px;
+      }
     }
     &-3 {
       // padding: 50px;
@@ -63,6 +66,9 @@
         padding-right: 60px;
         font-size: 34px;
         color: $secondary-color;
+      }
+      .flex-button {
+        bottom: 80px;
       }
     }
     @media (min-width: 1400px) {

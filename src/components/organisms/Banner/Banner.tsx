@@ -24,12 +24,12 @@ const Banner: React.FC = () => {
         spaceBetween={0}
         className="banner-swiper"
       >
-        {bannerImages.map((image, index) => (
-          <SwiperSlide key={index} className='banner-slide'>
-            <div className={`back banner-slide-${index + 1}`} style={{ backgroundImage: `url(${image.src})` }}>
-              <h1 className='super-title'>{image.title}</h1>
-              <p className='super-text'>{image.text}</p>
-              {index === 0 && (
+        <>
+          {bannerImages.map((image, index) => (
+            <SwiperSlide key={index} className='banner-slide'>
+              <div className={`back banner-slide-${index + 1}`} style={{ backgroundImage: `url(${image.src})` }}>
+                <h1 className='super-title'>{image.title}</h1>
+                <p className='super-text'>{image.text}</p>
                 <div className='flex-button'>
                   <a href="https://store.converxia.com/shop/credihogar" target="_blank" rel="noopener noreferrer" className="button button-gray">
                     <ShoppingOutlined />
@@ -40,10 +40,10 @@ const Banner: React.FC = () => {
                     Escríbenos por WhatsApp
                   </a>
                 </div>
-              )}
-            </div>
-          </SwiperSlide>
-        ))}
+              </div>
+            </SwiperSlide>
+          ))}
+        </>
       </Swiper>
     </div>
   );

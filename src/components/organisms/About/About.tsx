@@ -8,8 +8,8 @@ import { WhatsAppOutlined } from '@ant-design/icons';
 const About = () => {
   const bannerImages = [
     { id: 1, img: moneyPng, text: 'Financiamiento facil' },
-    { id: 2, img: surePng, text: 'Entrega a domicilio' },
-    { id: 3, img: carPng, text: 'Garantia de Calidad' }
+    { id: 2, img: surePng, text: 'Garantia de Calidad' },
+    { id: 3, img: carPng, text: 'Entrega a domicilio' },
   ];
 
   // Tus variantes están perfectas
